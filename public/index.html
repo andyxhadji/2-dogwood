@@ -30,7 +30,13 @@
         <a-asset-item id="ycr-office-obj" src="/assets/YCR_eleVR_Room_14_Structure.obj"></a-asset-item>
         <a-asset-item id="ycr-office-mtl" src="/assets/YCR_eleVR_Room_14_Structure.mtl"></a-asset-item> 
 
-        <img id="sky" src="https://cdn.glitch.com/5b637dea-7247-4df6-8c75-f4e8bfe6a435%2F4807094-free-sky-wallpaper.jpg?1490652385202"/>
+        <img id="sky" src="/assets/test-panorama.jpg"/>
+
+	<img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+
+	<img id="wallTexture" src="/assets/black-paper.jpg">
+
+
       </a-asset>
               <!-- Avatar -->
         <template id="avatar-template">
@@ -72,6 +78,7 @@
       <!-- A-COMPONENTS -->
       <a-obj-model src="#ycr-office-obj" scale="0.01 0.01 0.01" position="2.8 0 -2.4" rotation="0 270 0" mtl="#ycr-office-mtl"></a-obj-model>
       <a-obj-model src="#ycr-office-floor-obj" scale="0.01 0.01 0.01" position="2.8 0 -2.4" rotation="0 270 0" mtl="#ycr-office-floor-mtl"></a-obj-model>
+      <a-box id="office-wall-cover" src="#wallTexture" repeat="1 1" rotation="0 0 0" position="2.85 2.25 -5.48" color="#CCC" height="5" width="5" depth="0.25"></a-box>
       
       <a-sky src="#sky" rotation="0 180 0"></a-sky>
     
@@ -88,6 +95,8 @@
           random-color
         ></a-sphere>
       </a-entity>
+
+
     </a-scene>
   
   </body>
