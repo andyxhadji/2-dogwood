@@ -70,11 +70,26 @@
                 spawn-in-circle="radius:3"
                 wasd-controls
                 look-controls>
+	    <a-entity
+      id="observerCamera"
+      position="2 1.8 4.8"
+      rotation="-20 45 0"
+      camera
+      observer="canvas: #cameraObserver;"
+      active="false"></a-entity>
         <a-sphere class="head"
           visible="false"
           random-color
         ></a-sphere>
       </a-entity>
+
+          <a-entity
+      id="observerCamera"
+      position="2 1.8 4.8"
+      rotation="-20 45 0"
+      camera
+      observer="canvas: #cameraObserver;"
+      active="false"></a-entity>
 
       <a-entity position="0 0 0"
         geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
@@ -93,7 +108,14 @@
 
         <img id="sky" src="https://cdn.glitch.com/5b637dea-7247-4df6-8c75-f4e8bfe6a435%2F4807094-free-sky-wallpaper.jpg?1490652385202"/>
       </a-asset>
+      <!-- TV -->
+      <a-entity camera="active: false" camrender="cid: cam2"
+          position="1 5 0" rotation="-90 -90 0">
+      </a-entity>
     </a-scene>
+ 
+
+
 
     <script>
       // On mobile remove elements that are resource heavy

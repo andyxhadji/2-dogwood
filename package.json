@@ -10,6 +10,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "aframe-observer-component": "^1.0.1",
     "networked-aframe": "^0.7.0"
   },
   "engines": {
