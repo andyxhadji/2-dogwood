@@ -85,10 +85,10 @@
       <a-obj-model src="#ycr-office-floor-obj" scale="0.01 0.01 0.01" position="2.8 0 -2.4" rotation="0 270 0" mtl="#ycr-office-floor-mtl"></a-obj-model>
       <a-box id="office-wall-cover" src="#wallTexture" repeat="1 1" rotation="0 0 0" position="2.85 2.25 -5.48" color="#CCC" height="5" width="5" depth="0.25"></a-box>
       <!-- TV -->
-      <a-plane position="2.8 2 -5.3" rotation="0 0 0" width="1.5" height="1"
-								material="src:#tv; opacity: .95">
+      <a-plane position="2.8 2 -5.3" rotation="0 0 0" width="2" height="1.5"
+								material="src:#tv; opacity: .95"canvas-updater>
 	      <a-entity camera="active: false" camrender="cid: tv"
-					       position="0 0 0" rotation="0 180 0">
+					       position="-2 1 1" rotation="-10 180 0">
 	      </a-entity>
 
       </a-plane>
