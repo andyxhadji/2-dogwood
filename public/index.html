@@ -130,6 +130,38 @@
 
       <!-- Whiteboard -->
       <a-box color="#CACFD2" id="whiteboard" position="2.75 2.5 1" width="3" height="2" depth="0.03"></a-box>
+
+      <!-- Door Entrance -->
+      <a-entity
+	      id="door_entrance_parent"
+	      position="0.335 0 -2.4">
+
+	      <a-entity id="pane_parent" height="5" position="0 2.263 0"> 
+		      <a-box 
+			      id="pane_1" 
+			      width="0.04" 
+			      depth="2.1" 
+			      height="1.6"
+			      opacity="0.2"
+			      position="0 1.6 0"></a-box>
+		      <a-box 
+			      id="pane_2" 
+			      width="0.04" 
+			      depth="2.1" 
+			      height="1.6"
+			      opacity="0.9"
+			      color="silver"
+			      position="0 0 0"></a-box>
+		      <a-box
+			      id="pane_3"
+			      width="0.04" 
+			      depth="2.1" 
+			      height="1.6"
+			      opacity="0.2"
+			      position="0 -1.6 0"></a-box>
+	      </a-entity>
+
+      </a-entity>
      
       <a-sky src="#sky" rotation="0 180 0"></a-sky>
       <a-entity
