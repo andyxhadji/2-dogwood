@@ -20,7 +20,9 @@
     <a-scene
       networked-scene="
       room: basic;
+      adapter: webrtc;
       debug: true;
+      audio: true;
     "
     >
       <!-- A-ASSETS -->
@@ -56,7 +58,7 @@
 
       <!-- Avatar -->
       <template id="avatar-template">
-        <a-entity class="avatar">
+        <a-entity class="avatar" networked-audio-source>
           <a-entity class="body">
             <a-sphere scale="0.2 0.2 0.2" position="0 -0.4 0.0"></a-sphere>
             <a-cylinder scale="0.2 0.1 0.2" position="0 -0.45 0.0"></a-cylinder>
