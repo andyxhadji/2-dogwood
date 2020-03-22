@@ -12,6 +12,7 @@
   "dependencies": {
     "aframe-observer-component": "^1.0.1",
     "aframe-playground-components": "^0.1.1",
+    "easyrtc": "^1.1.0",
     "networked-aframe": "^0.7.0"
   },
   "engines": {
