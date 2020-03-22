@@ -13,8 +13,6 @@
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
     <script src="/js/camrender.js"></script>-->
 
-
-    
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <!--<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
@@ -112,6 +110,13 @@
       ></a-box>
 
       <!-- TV -->
+      <a-entity
+        camera="active: false; fov: 80; zoom: 0.8; spectator: true"
+        camrender="cid: tv"
+        position="2.85 3.2 -5.1"
+        rotation="-35 180 0"
+      >
+      </a-entity>
       <a-plane
         position="2.8 2 -5.3"
         rotation="0 0 0"
@@ -127,14 +132,6 @@
           depth=".1"
           position="0 0 -0.065"
         ></a-box>
-        <a-entity
-          camera="active: false; zoom: 0.8"
-          camrender="cid: tv"
-          position="-1.8 1 0.1"
-          rotation="0 180 0"
-        >
-          <a-box color="black" width=".1" height=".1" depth=".1"></a-box>
-        </a-entity>
       </a-plane>
 
       <!-- Chairs -->
