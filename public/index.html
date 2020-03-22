@@ -18,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="easyrtc/easyrtc.js"></script>
     <script src="https://unpkg.com/networked-aframe@^0.6.0/dist/networked-aframe.min.js"></script>
+    <script src="https://rawgit.com/atomicguy/aframe-fence-component/master/dist/aframe-fence-component.min.js"></script>
 
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
@@ -61,6 +62,7 @@
         <canvas id="tv"></canvas>
 
         <a-asset-item id="chair" src="/assets/scene.gltf"></a-asset-item>
+        <canvas id="cam2"></canvas>
       </a-assets>
 
       <!-- Avatar -->
@@ -110,19 +112,14 @@
       ></a-box>
 
       <!-- TV -->
+
       <a-entity
-        camera="active: false; fov: 80; zoom: 0.8; spectator: true"
-        camrender="cid: tv"
-        position="2.85 3.2 -5.1"
-        rotation="-35 180 0"
-      >
-      </a-entity>
-      <a-plane
         position="2.8 2 -5.3"
         rotation="0 0 0"
         width="2.8"
         height="1.5"
         material="src:#tv; opacity: .95"
+        geometry="primitive: plane; width: 2.8; height: 1.5"
         canvas-updater
       >
         <a-box
@@ -132,8 +129,15 @@
           depth=".1"
           position="0 0 -0.065"
         ></a-box>
-      </a-plane>
-
+      </a-entity>
+      <a-entity
+        camera="active: false; fov: 80; zoom: 0.8;"
+        camrender="cid: tv"
+        position="2.85 3.2 -5.1"
+        rotation="-35 180 0"
+        scale="0.1 0.1 0.1"
+      >
+      </a-entity>
       <!-- Chairs -->
       <a-entity
         scale="0.0015 0.0015 0.0015"
@@ -442,6 +446,7 @@
         spawn-in-circle="radius:3"
         wasd-controls
         look-controls
+        fence="width:4.5;depth:6;x0:2.9;z0:-2.2"
       >
         <a-sphere class="head" visible="false" random-color></a-sphere>
       </a-entity>

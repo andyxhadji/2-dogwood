@@ -10,6 +10,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "aframe": "^1.0.4",
     "aframe-observer-component": "^1.0.1",
     "aframe-playground-components": "^0.1.1",
     "easyrtc": "^1.1.0",
