@@ -26,21 +26,15 @@
     "
     >
       <!-- A-ASSETS -->
-      <a-asset>
+      <a-assets>
+        <a-asset-item id="floor-obj" src="/assets/Floor.obj"></a-asset-item>
+        <a-asset-item id="floor-mtl" src="/assets/Floor.mtl"></a-asset-item>
         <a-asset-item
-          id="ycr-office-floor-obj"
-          src="/assets/Floor.obj"
-        ></a-asset-item>
-        <a-asset-item
-          id="ycr-office-floor-mtl"
-          src="/assets/Floor.mtl"
-        ></a-asset-item>
-        <a-asset-item
-          id="ycr-office-obj"
+          id="office-obj"
           src="/assets/RoomStructure.obj"
         ></a-asset-item>
         <a-asset-item
-          id="ycr-office-mtl"
+          id="office-mtl"
           src="/assets/RoomStructure.mtl"
         ></a-asset-item>
 
@@ -54,7 +48,9 @@
         <img id="wallTexture" src="/assets/black-paper.jpg" />
 
         <canvas id="tv"></canvas>
-      </a-asset>
+
+        <a-asset-item id="chair" src="/assets/scene.gltf"></a-asset-item>
+      </a-assets>
 
       <!-- Avatar -->
       <template id="avatar-template">
@@ -76,19 +72,19 @@
 
       <!-- A-COMPONENTS -->
       <a-obj-model
-        src="#ycr-office-obj"
+        src="#office-obj"
         scale="0.01 0.01 0.01"
         position="2.8 0 -2.4"
         rotation="0 270 0"
-        mtl="#ycr-office-mtl"
+        mtl="#office-mtl"
       >
       </a-obj-model>
       <a-obj-model
-        src="#ycr-office-floor-obj"
+        src="#floor-obj"
         scale="0.01 0.01 0.01"
         position="2.8 0 -2.4"
         rotation="0 270 0"
-        mtl="#ycr-office-floor-mtl"
+        mtl="#floor-mtl"
       ></a-obj-model>
       <a-box
         id="office-wall-cover"
@@ -101,133 +97,222 @@
         width="5"
         depth="0.25"
       ></a-box>
+
       <!-- TV -->
       <a-entity
-	      camera="active: false; fov: 80; zoom: 0.8; spectator: true"
-	      camrender="cid: tv"
-	      position="2.85 3.2 -5.1"
-	      rotation="4.5 148.6 10.94"
-	      >
+        camera="active: false; fov: 80; zoom: 0.8; spectator: true"
+        camrender="cid: tv"
+        position="2.85 3.2 -5.1"
+        rotation="4.5 148.6 10.94"
+      >
       </a-entity>
 
       <a-plane
         position="2.8 2 -5.3"
         rotation="0 0 0"
-        width="2"
+        width="2.8"
         height="1.5"
         material="src:#tv; opacity: .95"
         canvas-updater
       >
-        <a-box color="black" width="2.3" height="1.7" depth=".1" position="0 0 -0.065"></a-box>
+        <a-box
+          color="black"
+          width="3"
+          height="1.7"
+          depth=".1"
+          position="0 0 -0.065"
+        ></a-box>
+        <a-entity
+          camera="active: false; zoom: 0.8"
+          camrender="cid: tv"
+          position="-1.8 1 0.1"
+          rotation="0 180 0"
+        >
+          <a-box color="black" width=".1" height=".1" depth=".1"></a-box>
+        </a-entity>
       </a-plane>
 
+      <!-- Chairs -->
+      <a-entity
+        scale="0.0015 0.0015 0.0015"
+        position="1.5 1 -4"
+        rotation="0 90"
+        gltf-model="#chair"
+      ></a-entity>
+      <a-entity
+        scale="0.0015 0.0015 0.0015"
+        position="1.5 1 -2.8"
+        rotation="0 90"
+        gltf-model="#chair"
+      ></a-entity>
+      <a-entity
+        scale="0.0015 0.0015 0.0015"
+        position="4 1 -4"
+        rotation="0 270"
+        gltf-model="#chair"
+      ></a-entity>
+      <a-entity
+        scale="0.0015 0.0015 0.0015"
+        position="4 1 -2.8"
+        rotation="0 270"
+        gltf-model="#chair"
+      ></a-entity>
+
       <!-- Table -->
-      <a-box color="#CACFD2" id="table" position="2.8 1 -3.5" width="1.8" height="0.1" depth="3.5">
-	      <a-cylinder color="#CACFD2" id="table_edge" position="0 0 1.75" radius=".9" height="0.1" depth="1">
-		      <a-cylinder id="table_leg" color="#566573" position="0 -0.6 0" radius="0.06" height="1.2"></a-cylinder>
-		      <a-box id="table-base" color="#566573" position="0 -1.1 0" width="0.9" height="0.03" depth="0.9"></a-box>
-	      </a-cylinder>
+      <a-box
+        color="#CACFD2"
+        id="table"
+        position="2.8 1 -3.5"
+        width="1.8"
+        height="0.1"
+        depth="3.5"
+      >
+        <a-cylinder
+          color="#CACFD2"
+          id="table_edge"
+          position="0 0 1.75"
+          radius=".9"
+          height="0.1"
+          depth="1"
+        >
+          <a-cylinder
+            id="table_leg"
+            color="#566573"
+            position="0 -0.6 0"
+            radius="0.06"
+            height="1.2"
+          ></a-cylinder>
+          <a-box
+            id="table-base"
+            color="#566573"
+            position="0 -1.1 0"
+            width="0.9"
+            height="0.03"
+            depth="0.9"
+          ></a-box>
+        </a-cylinder>
       </a-box>
 
       <!-- Whiteboard -->
-      <a-box color="#CACFD2" id="whiteboard" position="2.75 2.5 1" width="3" height="2" depth="0.03"></a-box>
+      <a-box
+        color="#CACFD2"
+        id="whiteboard"
+        position="2.75 2.5 1.12"
+        width="3.3"
+        height="2"
+        depth="0.03"
+      ></a-box>
+      <a-box
+        color="#CACFD2"
+        opacity="0.4"
+        id="whiteboard-glass"
+        position="2.75 2.5 1.1"
+        width="3.33"
+        height="2.03"
+        depth="0.03"
+      ></a-box>
 
       <!-- Door Entrance -->
-      <a-entity
-	      id="door_entrance_parent"
-	      position="0.335 0 -2.3">
+      <a-entity id="door_entrance_parent" position="0.335 0 -2.3">
+        <a-entity id="panes1_parent" height="5" position="0 2.263 0">
+          <a-box
+            id="pane_1"
+            width="0.04"
+            depth="2.1"
+            height="1.6"
+            opacity="0.2"
+            position="0 1.6 0"
+          ></a-box>
+          <a-box
+            id="pane_2"
+            width="0.04"
+            depth="2.1"
+            height="1.6"
+            opacity="0.9"
+            color="silver"
+            position="0 0 0"
+          ></a-box>
+          <a-box
+            id="pane_3"
+            width="0.04"
+            depth="2.1"
+            height="1.6"
+            opacity="0.2"
+            position="0 -1.6 0"
+          ></a-box>
+        </a-entity>
 
-	      <a-entity id="panes1_parent" height="5" position="0 2.263 0"> 
-		      <a-box 
-			      id="pane_1" 
-			      width="0.04" 
-			      depth="2.1" 
-			      height="1.6"
-			      opacity="0.2"
-			      position="0 1.6 0"></a-box>
-		      <a-box 
-			      id="pane_2" 
-			      width="0.04" 
-			      depth="2.1" 
-			      height="1.6"
-			      opacity="0.9"
-			      color="silver"
-			      position="0 0 0"></a-box>
-		      <a-box
-			      id="pane_3"
-			      width="0.04" 
-			      depth="2.1" 
-			      height="1.6"
-			      opacity="0.2"
-			      position="0 -1.6 0"></a-box>
-	      </a-entity>
+        <a-entity id="panes2_parent" height="5" position="0 2.263 2.12">
+          <a-box
+            id="pane_1"
+            width="0.04"
+            depth="2.1"
+            height="1.6"
+            opacity="0.2"
+            position="0 1.6 0"
+          ></a-box>
+          <a-box
+            id="pane_2"
+            width="0.04"
+            depth="2.1"
+            height="1.6"
+            opacity="0.9"
+            color="silver"
+            position="0 0 0"
+          ></a-box>
+          <a-box
+            id="pane_3"
+            width="0.04"
+            depth="2.1"
+            height="1.6"
+            opacity="0.2"
+            position="0 -1.6 0"
+          ></a-box>
+        </a-entity>
 
-	      <a-entity id="panes2_parent" height="5" position="0 2.263 2.12"> 
-		      <a-box 
-			      id="pane_1" 
-			      width="0.04" 
-			      depth="2.1" 
-			      height="1.6"
-			      opacity="0.2"
-			      position="0 1.6 0"></a-box>
-		      <a-box 
-			      id="pane_2" 
-			      width="0.04" 
-			      depth="2.1" 
-			      height="1.6"
-			      opacity="0.9"
-			      color="silver"
-			      position="0 0 0"></a-box>
-		      <a-box
-			      id="pane_3"
-			      width="0.04" 
-			      depth="2.1" 
-			      height="1.6"
-			      opacity="0.2"
-			      position="0 -1.6 0"></a-box>
-	      </a-entity>
-
-	      <a-entity id="panes2_parent" height="5" position="0 2.263 -2.12"> 
-		      <a-box 
-			      id="pane_1" 
-			      width="0.04" 
-			      depth="2.1" 
-			      height="1.6"
-			      opacity="0.2"
-			      position="0 1.6 0"></a-box>
-		      <a-box 
-			      id="pane_2" 
-			      width="0.04" 
-			      depth="2.1" 
-			      height="1.6"
-			      opacity="0.9"
-			      color="silver"
-			      position="0 0 0"></a-box>
-		      <a-box
-			      id="pane_3"
-			      width="0.04" 
-			      depth="2.1" 
-			      height="1.6"
-			      opacity="0.2"
-			      position="0 -1.6 0"></a-box>
-	      </a-entity>
+        <a-entity id="panes2_parent" height="5" position="0 2.263 -2.12">
+          <a-box
+            id="pane_1"
+            width="0.04"
+            depth="2.1"
+            height="1.6"
+            opacity="0.2"
+            position="0 1.6 0"
+          ></a-box>
+          <a-box
+            id="pane_2"
+            width="0.04"
+            depth="2.1"
+            height="1.6"
+            opacity="0.9"
+            color="silver"
+            position="0 0 0"
+          ></a-box>
+          <a-box
+            id="pane_3"
+            width="0.04"
+            depth="2.1"
+            height="1.6"
+            opacity="0.2"
+            position="0 -1.6 0"
+          ></a-box>
+        </a-entity>
       </a-entity>
 
       <!-- Exterior 
       <a-entity id="exterior_parent">
-      
-	      <a-plane
+	       <a-plane
 		      id="floor"
 		      src="#ground"
 		      rotation="-90 0 0"
 		      height="100"
 		      width="100">
-	      </a-plane>
-      </a-entity>
-      -->
+          </a-plane>
+      </a-entity->-->
 
-     
-      <a-sky src="#sky" rotation="0 180 0"></a-sky>
+      <a-sky src="#sky" rotation="0 270 0"></a-sky>
+
+      <!-- Player -->
       <a-entity
         id="player"
         camera
@@ -239,6 +324,8 @@
       >
         <a-sphere class="head" visible="false" random-color></a-sphere>
       </a-entity>
+
+      <a-entity gltf-model="#tree"></a-entity>
     </a-scene>
   </body>
 </html>
