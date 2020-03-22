@@ -53,12 +53,12 @@
 
         <img id="sky" src="/assets/test-panorama.jpg" />
 
-        <img
-          id="groundTexture"
-          src="https://cdn.aframe.io/a-painter/images/floor.jpg"
-        />
+        <img id="groundTexture" src="/assets/brown_concrete_texture.jpg" />
 
         <img id="wallTexture" src="/assets/black-paper.jpg" />
+        <img id="pillar" src="/assets/pillar_white_texture.jpeg" />
+        <img id="officeBackground" src="/assets/office_background.png" />
+        <img id="ceilingBackground" src="/assets/ceiling_background.png" />
 
         <canvas id="tv"></canvas>
 
@@ -112,14 +112,6 @@
       ></a-box>
 
       <!-- TV -->
-      <a-entity
-        camera="active: false; fov: 80; zoom: 0.8; spectator: true"
-        camrender="cid: tv"
-        position="2.85 3.2 -5.1"
-        rotation="4.5 148.6 10.94"
-      >
-      </a-entity> 
-
       <a-plane
         position="2.8 2 -5.3"
         rotation="0 0 0"
@@ -312,16 +304,135 @@
         </a-entity>
       </a-entity>
 
-      <!-- Exterior 
+      <!-- Exterior  -->
       <a-entity id="exterior_parent">
-	       <a-plane
-		      id="floor"
-		      src="#ground"
-		      rotation="-90 0 0"
-		      height="100"
-		      width="100">
-          </a-plane>
-      </a-entity->-->
+        <a-plane
+          id="floor"
+          repeat="5 5"
+          src="#groundTexture"
+          position="-9.5 -.2 0"
+          rotation="-90 0 0"
+          height="50"
+          width="20"
+        >
+        </a-plane>
+        <a-obj-model
+          id="outside_door"
+          src="#floor-obj"
+          scale="0.01 0.01 0.01"
+          position="-4.7 0 -.79"
+          rotation="0 270 0"
+          mtl="#floor-mtl"
+        >
+          <a-box
+            id="pillar"
+            src="#pillar"
+            repeat="1 4"
+            position="-114 335 -68"
+            height="700"
+            width="160"
+            depth="160"
+          ></a-box>
+        </a-obj-model>
+        <a-obj-model
+          id="outside_right"
+          src="#floor-obj"
+          scale="0.01 0.01 0.01"
+          position="-4.7 0 -9.5"
+          rotation="0 270 0"
+          mtl="#floor-mtl"
+        >
+          <a-box
+            id="pillar"
+            src="#pillar"
+            repeat="1 4"
+            position="-114 335 -68"
+            height="700"
+            width="160"
+            depth="160"
+          ></a-box>
+        </a-obj-model>
+
+        <a-obj-model
+          id="far_left"
+          src="#floor-obj"
+          scale="0.01 0.01 0.01"
+          position="-10 0 -.3"
+          rotation="0 90 0"
+          mtl="#floor-mtl"
+        >
+          <a-box
+            id="pillar"
+            src="#pillar"
+            repeat="1 4"
+            position="-114 335 -68"
+            height="700"
+            width="160"
+            depth="160"
+          ></a-box>
+        </a-obj-model>
+
+        <a-obj-model
+          id="far_right"
+          src="#floor-obj"
+          scale="0.01 0.01 0.01"
+          position="-10 0 -9.02"
+          rotation="0 90 0"
+          mtl="#floor-mtl"
+        >
+          <a-box
+            id="pillar"
+            src="#pillar"
+            repeat="1 4"
+            position="-114 335 -68"
+            height="700"
+            width="160"
+            depth="160"
+          ></a-box>
+        </a-obj-model>
+      </a-entity>
+
+      <!-- Ceiling & Background -->
+      <a-plane
+        id="office_background"
+        src="#officeBackground"
+        repeat="1 1"
+        position="-25 9 -3.8"
+        rotation="0 90 0"
+        height="30"
+        width="40"
+      >
+      </a-plane>
+      <a-plane
+        id="office_background"
+        src="#officeBackground"
+        repeat="1 1"
+        position="-20.9 9 26.8"
+        rotation="0 120 0"
+        height="30"
+        width="40"
+      >
+      </a-plane>
+      <a-plane
+        id="office_background"
+        src="#officeBackground"
+        repeat="1 1"
+        position="-20 9 -28.15"
+        rotation="0 60 0"
+        height="30"
+        width="40"
+      >
+      </a-plane>
+      <a-plane
+        id="office_ceiling"
+        src="#ceilingBackground"
+        repeat="1 3"
+        position="-8.2 14.9 -1.25"
+        rotation="90 90 180"
+        height="30"
+        width="40"
+      >
+      </a-plane>
 
       <a-sky src="#sky" rotation="0 270 0"></a-sky>
 
