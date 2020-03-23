@@ -60,28 +60,28 @@
             <a-sphere
               color="#57b2f2"
               scale="0.3 0.3 0.3"
-              position="0 -0.7 0.0"
+              position="0 -0.4 0.0"
             ></a-sphere>
             <a-cylinder
               src="/assets/shirt.png"
               color="#57b2f2"
               scale="0.3 0.2 0.3"
-              position="0 -0.8 0.0"
+              position="0 -0.5 0.0"
             ></a-cylinder>
             <a-cylinder
               color="#57b2f2"
               scale="0.3 0.1 0.3"
-              position="0 -0.9 0.0"
+              position="0 -0.6 0.0"
             ></a-cylinder>
             <a-cylinder
               color="#063a7a"
               scale="0.3 0.3 0.3"
-              position="0 -1.1 0.0"
+              position="0 -0.8 0.0"
             ></a-cylinder>
             <a-sphere
               color="#063a7a"
               scale="0.3 0.3 0.3"
-              position="0 -1.2 0.0"
+              position="0 -0.91 0.0"
             ></a-sphere>
           </a-entity>
           <a-sphere
@@ -90,6 +90,7 @@
             scale="0.45 0.45 0.45"
             src="/assets/face.jpg"
             rotation="0 90 0"
+            position="0 0.3 0"
           ></a-sphere>
         </a-entity>
       </template>
@@ -154,25 +155,25 @@
       <!-- Chairs -->
       <a-entity
         scale="0.0015 0.0015 0.0015"
-        position="1.5 1 -4"
+        position="1.5 0.88 -4"
         rotation="0 90"
         gltf-model="#chair"
       ></a-entity>
       <a-entity
         scale="0.0015 0.0015 0.0015"
-        position="1.5 1 -2.8"
+        position="1.5 0.88 -2.8"
         rotation="0 90"
         gltf-model="#chair"
       ></a-entity>
       <a-entity
         scale="0.0015 0.0015 0.0015"
-        position="4 1 -4"
+        position="4 0.88 -4"
         rotation="0 270"
         gltf-model="#chair"
       ></a-entity>
       <a-entity
         scale="0.0015 0.0015 0.0015"
-        position="4 1 -2.8"
+        position="4 0.88 -2.8"
         rotation="0 270"
         gltf-model="#chair"
       ></a-entity>
@@ -500,7 +501,7 @@
         id="player"
         camera
         networked="template:#avatar-template;attachTemplateToLocal:false;"
-        position="0 1.6 0"
+        position="2 1.5 -2"
         spawn-in-circle="radius:1"
         wasd-controls
         look-controls
