@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <!-- HEAD -->
   <head>
     <title>2-Dogwood Office</title>
@@ -121,7 +120,7 @@
         height="5"
         width="5"
         depth="0.25"
-        ></a-box>
+      ></a-box>
 
       <!-- TV -->
 
@@ -149,8 +148,8 @@
         rotation="-8 146 -8.1"
         scale="0.1 0.1 0.1"
       >
-      <!-- old rotation ^^^ -->
-      <!-- -35 180 0 -->
+        <!-- old rotation ^^^ -->
+        <!-- -35 180 0 -->
       </a-entity>
       <!-- Chairs -->
       <a-entity
@@ -251,7 +250,24 @@
             opacity="0.9"
             color="silver"
             position="0 0 0"
-          ></a-box>
+          >
+            <a-plane
+              src="/assets/doge.png"
+              rotation="0 90 0"
+              material="alphaTest: 1"
+              position="0.032 0.441 0.726"
+              width="0.4"
+              height="0.4"
+            ></a-plane>
+            <a-plane
+              src="/assets/wood.jpg"
+              rotation="0 90 0"
+              material="alphaTest: 1"
+              position="0.031 0.441 0.5"
+              width="0.4"
+              height="0.3"
+            ></a-plane>
+          </a-box>
           <a-box
             id="pane_3"
             width="0.04"
@@ -280,11 +296,33 @@
             color="silver"
             position="0 0 0"
           >
-	  <a-cylinder id="doorknob" position="-.2 0 -.8" radius=".03" color="gray" height="1.4">
-		  <a-cylinder id="doorknob_part" position="0.091 0.225 0" color="gray" rotation="90 0 90" radius=".03" color="silver" height=".1"></a-cylinder>
-		  <a-cylinder id="doorknob_part" position="0.091 -0.225 0" color="gray" rotation="90 0 90" radius=".03" color="silver" height=".1"></a-cylinder>
-	  </a-cylinder>
-	  </a-box>
+            <a-cylinder
+              id="doorknob"
+              position="-.2 0 -.8"
+              radius=".03"
+              color="gray"
+              height="1.4"
+            >
+              <a-cylinder
+                id="doorknob_part"
+                position="0.091 0.225 0"
+                color="gray"
+                rotation="90 0 90"
+                radius=".03"
+                color="silver"
+                height=".1"
+              ></a-cylinder>
+              <a-cylinder
+                id="doorknob_part"
+                position="0.091 -0.225 0"
+                color="gray"
+                rotation="90 0 90"
+                radius=".03"
+                color="silver"
+                height=".1"
+              ></a-cylinder>
+            </a-cylinder>
+          </a-box>
           <a-box
             id="pane_3"
             width="0.04"
@@ -313,7 +351,7 @@
             color="silver"
             position="0 0 0"
           >
-	  </a-box>
+          </a-box>
           <a-box
             id="pane_3"
             width="0.04"
@@ -472,7 +510,6 @@
       </a-entity>
 
       <a-entity gltf-model="#tree"></a-entity>
-
     </a-scene>
   </body>
 </html>
