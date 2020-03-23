@@ -277,7 +277,12 @@
             opacity="0.9"
             color="silver"
             position="0 0 0"
-          ></a-box>
+          >
+	  <a-cylinder id="doorknob" position="-.2 0 -.8" radius=".03" color="gray" height="1.4">
+		  <a-cylinder id="doorknob_part" position="0.091 0.225 0" color="gray" rotation="90 0 90" radius=".03" color="silver" height=".1"></a-cylinder>
+		  <a-cylinder id="doorknob_part" position="0.091 -0.225 0" color="gray" rotation="90 0 90" radius=".03" color="silver" height=".1"></a-cylinder>
+	  </a-cylinder>
+	  </a-box>
           <a-box
             id="pane_3"
             width="0.04"
@@ -288,7 +293,7 @@
           ></a-box>
         </a-entity>
 
-        <a-entity id="panes2_parent" height="5" position="0 2.263 -2.12">
+        <a-entity id="panes3_parent" height="5" position="0 2.263 -2.12">
           <a-box
             id="pane_1"
             width="0.04"
@@ -305,7 +310,8 @@
             opacity="0.9"
             color="silver"
             position="0 0 0"
-          ></a-box>
+          >
+	  </a-box>
           <a-box
             id="pane_3"
             width="0.04"
