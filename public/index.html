@@ -17,7 +17,7 @@
 
       function onSceneLoad() {
         var username = "user-" + makeId(5).toLowerCase();
-        username = prompt("Choose a username", username);
+        username = prompt("\nUse arrow keys or W, A, S, D to move. Use left click to look around.\n\n Choose a username!", username);
         var player = document.getElementById("player");
         var myNametag = player.querySelector(".nametag");
         myNametag.setAttribute("text", "value", username);
