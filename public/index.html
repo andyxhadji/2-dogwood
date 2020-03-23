@@ -12,6 +12,32 @@
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
     <script src="/js/spawn-in-circle.component.js"></script>
     <script src="/js/camrender.js"></script>
+    <script>
+      // Define custom schema for syncing avatar color, set by random-color
+
+      function onSceneLoad() {
+        var username = "user-" + makeId(5).toLowerCase();
+        username = prompt("Choose a username", username);
+        var player = document.getElementById("player");
+        var myNametag = player.querySelector(".nametag");
+        myNametag.setAttribute("text", "value", username);
+
+        document
+          .querySelector("a-scene")
+          .components["networked-scene"].connect();
+      }
+
+      function makeId(length) {
+        var text = "";
+        var possible =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for (var i = 0; i < length; i++)
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+      }
+    </script>
   </head>
 
   <!-- BODY -->
@@ -23,6 +49,7 @@
       adapter: easyrtc;
       debug: false;
       audio: true;
+      connectOnLoad: false;
     "
     >
       <!-- A-ASSETS -->
@@ -54,8 +81,16 @@
       </a-assets>
 
       <!-- Avatar -->
-      <template id="avatar-template">
+      <template id="avatar-template" type="text/html">
         <a-entity class="avatar" networked-audio-source>
+          <a-entity
+            class="nametag"
+            text="value: Hello World; align:center;"
+            position="0 0.7 0"
+            rotation="0 180 0"
+            scale="8 8 8"
+          ></a-entity>
+
           <a-entity class="body">
             <a-sphere
               color="#57b2f2"
@@ -507,10 +542,27 @@
         look-controls
         fence="width:4.5;depth:6;x0:2.9;z0:-2.2"
       >
+        <a-text class="nametag"></a-text>
         <a-sphere class="head" visible="false" random-color></a-sphere>
       </a-entity>
 
       <a-entity gltf-model="#tree"></a-entity>
     </a-scene>
+    <script>
+      NAF.schemas.add({
+        template: "#avatar-template",
+        components: [
+          "position",
+          "rotation",
+          {
+            selector: ".nametag",
+            component: "text",
+            property: "value",
+          },
+        ],
+      });
+
+      document.querySelector("a-scene").addEventListener("loaded", onSceneLoad);
+    </script>
   </body>
 </html>
