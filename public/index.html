@@ -83,13 +83,15 @@
       <!-- Avatar -->
       <template id="avatar-template" type="text/html">
         <a-entity class="avatar" networked-audio-source>
-          <a-entity
+          <a-text
             class="nametag"
-            text="value: Hello World; align:center;"
+            text="value: Hello World; align:center"
             position="0 0.7 0"
             rotation="0 180 0"
+	    width="0.4"
+	    z-offset=".05"
             scale="8 8 8"
-          ></a-entity>
+          ></a-text>
 
           <a-entity class="body">
             <a-sphere
@@ -542,7 +544,7 @@
         look-controls
         fence="width:4.5;depth:6;x0:2.9;z0:-2.2"
       >
-        <a-text class="nametag"></a-text>
+        <a-text zOffset=".1" width="0.4" class="nametag"></a-text>
         <a-sphere class="head" visible="false" random-color></a-sphere>
       </a-entity>
 
