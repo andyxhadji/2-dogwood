@@ -10,6 +10,8 @@
     <script src="https://rawgit.com/atomicguy/aframe-fence-component/master/dist/aframe-fence-component.min.js"></script>
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
+
+    <script src="/js/twoway-motion.js"></script>
     <script src="/js/spawn-in-circle.component.js"></script>
     <script src="/js/camrender.js"></script>
     <script>
@@ -17,7 +19,10 @@
 
       function onSceneLoad() {
         var username = "user-" + makeId(5).toLowerCase();
-        username = prompt("\nUse arrow keys or W, A, S, D to move. Use left click to look around.\n\n Choose a username!", username);
+        username = prompt(
+          "\nUse arrow keys or W, A, S, D to move. Use left click to look around.\n\n Choose a username!",
+          username
+        );
         var player = document.getElementById("player");
         var myNametag = player.querySelector(".nametag");
         myNametag.setAttribute("text", "value", username);
@@ -560,7 +565,7 @@
       <a-sky src="#sky" rotation="0 270 0"></a-sky>
 
       <!-- Player -->
-      <a-entity
+      <a-camera
         id="player"
         camera
         networked="template:#avatar-template;attachTemplateToLocal:false;"
@@ -569,10 +574,11 @@
         wasd-controls
         look-controls
         fence="width:4.5;depth:6;x0:2.9;z0:-2.2"
+        twoway-motion
       >
         <a-text zOffset=".1" width="0.4" class="nametag"></a-text>
         <a-sphere class="head" visible="false" random-color></a-sphere>
-      </a-entity>
+      </a-camera>
 
       <a-entity gltf-model="#tree"></a-entity>
     </a-scene>
