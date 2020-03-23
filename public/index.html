@@ -3,23 +3,11 @@
   <!-- HEAD -->
   <head>
     <title>2-Dogwood Office</title>
-    <!-- <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> -->
-
-    <!-- <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
-    <script src="https://unpkg.com/networked-aframe@^0.7.0/dist/networked-aframe.min.js"></script>
-    <script src="easyrtc/easyrtc.js"></script>
-    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
-    <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
-    <script src="/js/camrender.js"></script>-->
-
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-    <!--<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="easyrtc/easyrtc.js"></script>
     <script src="https://unpkg.com/networked-aframe@^0.6.0/dist/networked-aframe.min.js"></script>
     <script src="https://rawgit.com/atomicguy/aframe-fence-component/master/dist/aframe-fence-component.min.js"></script>
-
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
     <script src="/js/spawn-in-circle.component.js"></script>
@@ -33,7 +21,7 @@
       networked-scene="
       room: basic;
       adapter: easyrtc;
-      debug: true;
+      debug: false;
       audio: true;
     "
     >
@@ -69,14 +57,37 @@
       <template id="avatar-template">
         <a-entity class="avatar" networked-audio-source>
           <a-entity class="body">
-            <a-sphere scale="0.2 0.2 0.2" position="0 -0.4 0.0"></a-sphere>
-            <a-cylinder scale="0.2 0.1 0.2" position="0 -0.45 0.0"></a-cylinder>
-            <a-sphere scale="0.2 0.2 0.2" position="0 -0.5 0.0"></a-sphere>
+            <a-sphere
+              color="#57b2f2"
+              scale="0.3 0.3 0.3"
+              position="0 -0.7 0.0"
+            ></a-sphere>
+            <a-cylinder
+              src="/assets/shirt.png"
+              color="#57b2f2"
+              scale="0.3 0.2 0.3"
+              position="0 -0.8 0.0"
+            ></a-cylinder>
+            <a-cylinder
+              color="#57b2f2"
+              scale="0.3 0.1 0.3"
+              position="0 -0.9 0.0"
+            ></a-cylinder>
+            <a-cylinder
+              color="#063a7a"
+              scale="0.3 0.3 0.3"
+              position="0 -1.1 0.0"
+            ></a-cylinder>
+            <a-sphere
+              color="#063a7a"
+              scale="0.3 0.3 0.3"
+              position="0 -1.2 0.0"
+            ></a-sphere>
           </a-entity>
           <a-sphere
             class="head"
             color="#fff"
-            scale="0.25 0.25 0.25"
+            scale="0.45 0.45 0.45"
             src="/assets/face.jpg"
             rotation="0 90 0"
           ></a-sphere>
@@ -109,7 +120,7 @@
         height="5"
         width="5"
         depth="0.25"
-      ></a-box>
+        ></a-box>
 
       <!-- TV -->
 
@@ -443,7 +454,7 @@
         camera
         networked="template:#avatar-template;attachTemplateToLocal:false;"
         position="0 1.6 0"
-        spawn-in-circle="radius:3"
+        spawn-in-circle="radius:1"
         wasd-controls
         look-controls
         fence="width:4.5;depth:6;x0:2.9;z0:-2.2"

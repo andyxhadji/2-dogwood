@@ -18,12 +18,12 @@ AFRAME.registerComponent('camrender',{
        // Height of the renderer element
        height: {
             type: 'number',
-            default: 300
+            default: 256
        },
        // Width of the renderer element
        width: {
             type: 'number',
-            default: 400
+            default: 256
        }
     },
     'update': function(oldData) {
