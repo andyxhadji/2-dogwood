@@ -88,8 +88,8 @@
             text="value: Hello World; align:center"
             position="0 0.7 0"
             rotation="0 180 0"
-	    width="0.4"
-	    z-offset=".05"
+            width="0.4"
+            z-offset=".05"
             scale="8 8 8"
           ></a-text>
 
@@ -348,7 +348,7 @@
                 rotation="90 0 90"
                 radius=".03"
                 color="silver"
-                height=".1"
+                height=".15"
               ></a-cylinder>
               <a-cylinder
                 id="doorknob_part"
@@ -357,7 +357,33 @@
                 rotation="90 0 90"
                 radius=".03"
                 color="silver"
-                height=".1"
+                height=".15"
+              ></a-cylinder>
+            </a-cylinder>
+            <a-cylinder
+              id="doorknob_inner"
+              position=".2 0 -.8"
+              radius=".03"
+              color="gray"
+              height="1.4"
+            >
+              <a-cylinder
+                id="doorknob_part"
+                position="-0.091 0.225 0"
+                color="gray"
+                rotation="90 0 90"
+                radius=".03"
+                color="silver"
+                height=".15"
+              ></a-cylinder>
+              <a-cylinder
+                id="doorknob_part"
+                position="-0.091 -0.225 0"
+                color="gray"
+                rotation="90 0 90"
+                radius=".03"
+                color="silver"
+                height=".15"
               ></a-cylinder>
             </a-cylinder>
           </a-box>
