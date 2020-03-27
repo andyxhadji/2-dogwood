@@ -1,6 +1,8 @@
-# Networked-Aframe Starter Pack
+# 2-dogwood
 
-Built with [Networked-A-Frame](https://github.com/haydenjameslee/networked-aframe), a web framework for building multi-user virtual reality experiences. Works on Vive, Rift, desktop, mobile platforms.
+Run `npm install` and then `npm run start` to run server on `localhost:8080`
 
 Click and drag on desktop. Open it on a smartphone and use the device motion sensors. Or [plug in a VR headset](https://webvr.rocks)!
 Test
+
+

@@ -7,14 +7,18 @@
   "description": "What am I about?",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
     "aframe": "^1.0.4",
     "aframe-observer-component": "^1.0.1",
     "aframe-playground-components": "^0.1.1",
+    "aframe-react": "^4.4.0",
+    "babel-polyfill": "^6.26.0",
+    "colors": "^1.4.0",
     "easyrtc": "^1.1.0",
-    "networked-aframe": "^0.7.0"
+    "networked-aframe": "0.7.0"
   },
   "engines": {
     "node": "8.10.0"
